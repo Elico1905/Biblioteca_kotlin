@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Biblioteca</string>
+
+    <!-- Texto de Login -->
+
+    <string name="login_Message1">¡Bienvenido de nuevo!</string>
+    <string name="login_Message2">¿Estas listo?</string>
+    <string name="login_user">Numero De Control</string>
+    <string name="login_password">Password</string>
+    <string name="login_button1">Entrar</string>
+    <string name="login_text1">Registrate aqui.</string>
+    <string name="login_text2">Porfavor llena todos los campos</string>
+    <string name="login_button_ok">Entendido</string>
+
 </resources>
