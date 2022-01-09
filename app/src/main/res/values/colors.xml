@@ -6,4 +6,6 @@
     <color name="hide_black">#BC232323</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="object_blue">#03A9F4</color>
+
 </resources>

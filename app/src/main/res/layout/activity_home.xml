@@ -6,19 +6,101 @@
     android:layout_height="match_parent"
     tools:context=".ActivityHome">
 
-    <LinearLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/blue" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:scaleType="centerCrop"
+                android:src="@drawable/svg_superior_2" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10sp"
-            android:layout_marginTop="15sp"
-            android:layout_marginEnd="10sp"
-            android:text="Home"
-            android:textColor="@color/hide_black"
-            android:textSize="30sp"
-            android:textAlignment="center"/>
-    </LinearLayout>
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/recyclerView_photo"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/image_default_woman"/>
+            <Space
+                android:layout_width="14dp"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre: Gonzalo"
+                    android:textSize="17dp"
+                    android:textColor="@color/iletters_white"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Control: S17030193"
+                    android:textSize="17dp"
+                    android:textColor="@color/iletters_white"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/btn_salir"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:background="@drawable/effect_radius_white"
+                android:text="@string/home_exit_text"
+                android:textSize="18dp"
+                android:textColor="@color/hide_black"
+                android:textAlignment="center"
+                android:foreground="@drawable/effect_ripple_blue_color"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

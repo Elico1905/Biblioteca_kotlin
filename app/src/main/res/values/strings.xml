@@ -5,11 +5,15 @@
 
     <string name="login_Message1">¡Bienvenido de nuevo!</string>
     <string name="login_Message2">¿Estas listo?</string>
-    <string name="login_user">Numero De Control</string>
+    <string name="login_user">Número De Control</string>
     <string name="login_password">Password</string>
     <string name="login_button1">Entrar</string>
-    <string name="login_text1">Registrate aqui.</string>
-    <string name="login_text2">Porfavor llena todos los campos</string>
+    <string name="login_text1">Regístrate aquí.</string>
+    <string name="login_message1">Por favor llena todos los campos</string>
     <string name="login_button_ok">Entendido</string>
+    <string name="login_message_2">Ocurrió Un Error,Por favor intenta mas tarde</string>
 
+
+    <!-- Texto de Home -->
+    <string name="home_exit_text">Salir</string>
 </resources>
