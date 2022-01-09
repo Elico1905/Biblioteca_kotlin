@@ -16,4 +16,10 @@
 
     <!-- Texto de Home -->
     <string name="home_exit_text">Salir</string>
+    <string name="home_text1">Lista de libros</string>
+    <string name="home_text2">Prestados</string>
+    <string name="home_text3">Buzon</string>
+    <string name="home_text4">Mi Perfil</string>
+    <string name="home_text5">Historial</string>
+    <string name="home_text6">En Proceso</string>
 </resources>

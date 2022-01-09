@@ -29,6 +29,7 @@ class Login : AppCompatActivity() {
         }
         login_register.setOnClickListener {
             startActivity(Intent(this, ActivityRegister::class.java))
+            finish()
         }
         login_boton_google.setOnClickListener{ GoogleButton() }
         login_button_ok.setOnClickListener { HideMessageError() }
@@ -56,6 +57,13 @@ class Login : AppCompatActivity() {
         login_fondo.visibility = View.GONE
         login_message.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_down))
         login_message.visibility = View.GONE
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        if (login_fondo.visibility == View.VISIBLE){
+            HideMessageError()
+        }
     }
 
     private fun ShowProcessingData(){
