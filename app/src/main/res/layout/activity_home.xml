@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityHome">
+    tools:context=".Alumnos.ActivityHome">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -113,11 +113,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
+                android:id="@+id/home_ListBook"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 app:cardCornerRadius="20dp"
-                android:foreground="@drawable/effect_ripple_white"
-                android:backgroundTint="@color/blue"
+                android:foreground="@drawable/effect_ripple_itsch_white"
+                android:backgroundTint="#39A927"
                 android:clickable="true">
 
                 <LinearLayout
@@ -156,7 +157,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    android:foreground="@drawable/effect_ripple_white"
+                    android:foreground="@drawable/effect_ripple_itsch_white"
                     android:backgroundTint="@color/blue"
                     android:clickable="true">
 
@@ -194,7 +195,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    android:foreground="@drawable/effect_ripple_white"
+                    android:foreground="@drawable/effect_ripple_itsch_white"
                     android:backgroundTint="@color/blue"
                     android:clickable="true">
 
@@ -229,7 +230,7 @@
                 android:layout_height="90dp"
                 android:layout_marginTop="25dp"
                 app:cardCornerRadius="20dp"
-                android:foreground="@drawable/effect_ripple_white"
+                android:foreground="@drawable/effect_ripple_itsch_white"
                 android:backgroundTint="@color/blue"
                 android:clickable="true">
 
@@ -268,7 +269,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    android:foreground="@drawable/effect_ripple_white"
+                    android:foreground="@drawable/effect_ripple_itsch_white"
                     android:backgroundTint="@color/blue"
                     android:clickable="true">
 
@@ -306,7 +307,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    android:foreground="@drawable/effect_ripple_white"
+                    android:foreground="@drawable/effect_ripple_itsch_white"
                     android:backgroundTint="@color/blue"
                     android:clickable="true">
 
@@ -396,7 +397,7 @@
                         android:textColor="@color/white"
                         android:background="@drawable/effect_radius_edidttext_blue_1"
                         android:padding="5dp"
-                        android:foreground="@drawable/effect_ripple_white"
+                        android:foreground="@drawable/effect_ripple_itsch_white"
                         android:clickable="true"
                         android:textSize="19sp"/>
                     <Space
@@ -412,7 +413,7 @@
                         android:textColor="@color/white"
                         android:background="@drawable/effect_radius_edidttext_blue_1"
                         android:padding="5dp"
-                        android:foreground="@drawable/effect_ripple_white"
+                        android:foreground="@drawable/effect_ripple_itsch_white"
                         android:clickable="true"
                         android:textSize="19sp"/>
                 </LinearLayout>

@@ -1,13 +1,13 @@
-package com.elico.biblioteca
+package com.elico.biblioteca.Alumnos
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
+import com.elico.biblioteca.Login
+import com.elico.biblioteca.R
 import kotlinx.android.synthetic.main.activity_home.*
 
 class ActivityHome : AppCompatActivity() {
@@ -15,7 +15,10 @@ class ActivityHome : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        home_ListBook.setOnClickListener {
+            startActivity(Intent(this, ActivityListBook::class.java))
 
+        }
         home_button_exit.setOnClickListener {
             ShowMessageError()
         }
@@ -47,5 +50,12 @@ class ActivityHome : AppCompatActivity() {
         home_fondo.visibility = View.GONE
         home_message.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_down))
         home_message.visibility = View.GONE
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        if (home_fondo.visibility == View.VISIBLE){
+            HideMessageError()
+        }
     }
 }

@@ -2,15 +2,14 @@ package com.elico.biblioteca
 
 import android.content.Context
 import android.content.Intent
-import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
+import com.elico.biblioteca.Alumnos.ActivityHome
+import com.elico.biblioteca.Alumnos.ActivityRegister
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
@@ -68,6 +67,7 @@ class Login : AppCompatActivity() {
 
     private fun ShowProcessingData(){
         startActivity(Intent(this, ActivityHome::class.java))
+        finish()
         HideProcessingData()
     }
 

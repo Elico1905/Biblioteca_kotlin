@@ -10,28 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Biblioteca">
         <activity
-            android:name=".ActivityRegister"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".ActivityHome"
+            android:name=".Alumnos.ActivityListBook"
             android:exported="true"
-            android:theme="@style/Theme.BibliotecaFull"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BibliotecaStar">
 
         </activity>
+        <activity
+            android:name=".Alumnos.ActivityRegister"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Alumnos.ActivityHome"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BibliotecaFull"></activity>
         <activity
             android:name=".Login"
             android:exported="true"
             android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+
     </application>
 
 </manifest>

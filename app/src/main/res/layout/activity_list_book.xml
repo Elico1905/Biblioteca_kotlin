@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Alumnos.ActivityListBook"
+    android:background="@color/blue">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="20sp">
+
+        <Button
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ListBook_fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/hide_black"
+        android:clickable="true"/>
+
+    <RelativeLayout
+        android:id="@+id/ListBook_About"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom">
+
+        <androidx.cardview.widget.CardView
+            android:visibility="visible"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="20dp"
+            android:layout_marginBottom="-20dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="30dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:src="@drawable/image_book_test"/>
+
+                        <TextView
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre: Programacion Orientada a Objetos"
+                            android:textSize="22dp"
+                            android:fontFamily="sans-serif-black"/>
+
+                        <TextView
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Editorial: Alba"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Autor: Jaime Lopez becerril"
+                            android:textSize="20dp"/>
+
+
+                        <TextView
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Edicion: Quinta edicion"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Paginas: 462 Paginas"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Reservar"
+                            android:textColor="@color/white"
+                            android:background="@drawable/effect_radius_edidttext_blue_1"
+                            android:padding="5dp"
+                            android:foreground="@drawable/effect_ripple_white"
+                            android:clickable="true"
+                            android:textSize="19sp"
+                            android:layout_marginStart="20sp"
+                            android:layout_marginEnd="20sp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#A3232323"
+                            android:layout_marginTop="35dp"/>
+                        <TextView
+                            android:layout_marginTop="25dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Opiniones sobre el libro"
+                            android:textSize="25dp"
+                            android:textAlignment="center"
+                            android:fontFamily="sans-serif-black"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_marginTop="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="4.0"
+                                android:textSize="60dp"/>
+                            <Space
+                                android:layout_width="10dp"
+                                android:layout_height="0dp"/>
+                            <RatingBar
+                                android:layout_marginTop="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:numStars="5"
+                                android:rating="4"
+                                android:stepSize="0.5"
+                                android:progressTint="@color/yellow_Star"
+                                android:layout_gravity="center"
+                                android:isIndicator="true"
+                                android:scaleX=".7"
+                                android:scaleY=".7"
+                                android:transformPivotX="0dp"
+                                android:transformPivotY="0dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#A3232323"
+                            android:layout_marginTop="10dp"/>
+
+                        <LinearLayout
+                            android:layout_marginTop="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <RatingBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:numStars="5"
+                                android:rating="2"
+                                android:stepSize="0.5"
+                                android:progressTint="@color/yellow_Star"
+                                android:isIndicator="true"
+                                android:scaleX=".4"
+                                android:scaleY=".4"
+                                android:transformPivotX="0dp"
+                                android:transformPivotY="0dp"/>
+
+                            <TextView
+                                android:layout_marginTop="-35dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Juan Gonzales"
+                                android:textSize="22dp"
+                                android:fontFamily="sans-serif-black"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/test"
+                                android:textSize="18dp"
+                                android:justificationMode="inter_word"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <RatingBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:numStars="5"
+                                android:rating="5"
+                                android:stepSize="0.5"
+                                android:progressTint="@color/yellow_Star"
+                                android:isIndicator="true"
+                                android:scaleX=".4"
+                                android:scaleY=".4"
+                                android:transformPivotX="0dp"
+                                android:transformPivotY="0dp"/>
+
+                            <TextView
+                                android:layout_marginTop="-35dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Pedro Alvarez"
+                                android:textSize="22dp"
+                                android:fontFamily="sans-serif-black"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/test"
+                                android:textSize="18dp"
+                                android:justificationMode="inter_word"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end">
+
+                <ImageView
+                    android:id="@+id/ListBook_btn_Exit"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:clickable="true"
+                    android:foreground="@drawable/effect_ripple_white"
+                    android:src="@drawable/image_simbolo_x" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

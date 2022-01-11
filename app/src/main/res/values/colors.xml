@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="object_blue">#03A9F4</color>
 
+    <color name="yellow_Star">#FFC107</color>
+
 </resources>
