@@ -17,22 +17,27 @@ class ActivityHome : AppCompatActivity() {
 
         home_ListBook.setOnClickListener {
             startActivity(Intent(this, ActivityListBook::class.java))
-
         }
         home_button_exit.setOnClickListener {
-            ShowMessageError()
+            ShowMessageExit()
         }
         home_button_cancel.setOnClickListener {
-            HideMessageError()
+            HideMessageExit()
         }
         home_button_ok.setOnClickListener {
             startActivity(Intent(this, Login::class.java))
             finish()
         }
+        home_btn_about_exit.setOnClickListener {
+            HideBtnAboutExit()
+        }
+        home_section_profile.setOnClickListener {
+            ShowBtnAboutExit()
+        }
     }
 
 
-    private fun ShowMessageError(){
+    private fun ShowMessageExit(){
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.blue_shadow)
 
@@ -42,7 +47,7 @@ class ActivityHome : AppCompatActivity() {
         home_message.visibility = View.VISIBLE
     }
 
-    private fun HideMessageError(){
+    private fun HideMessageExit(){
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
         window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.blue)
 
@@ -52,10 +57,34 @@ class ActivityHome : AppCompatActivity() {
         home_message.visibility = View.GONE
     }
 
+
+    private fun HideBtnAboutExit(){
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+        window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.blue)
+
+        home_fondo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
+        home_fondo.visibility = View.GONE
+        home_about.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_down))
+        home_about.visibility = View.GONE
+    }
+
+    private fun ShowBtnAboutExit(){
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.blue_shadow)
+
+        home_fondo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
+        home_fondo.visibility = View.VISIBLE
+        home_about.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_up))
+        home_about.visibility = View.VISIBLE
+    }
+
     override fun onBackPressed() {
         //super.onBackPressed()
         if (home_fondo.visibility == View.VISIBLE){
-            HideMessageError()
+            when(View.VISIBLE){
+                home_message.visibility -> { HideMessageExit() }
+                home_about.visibility -> { HideBtnAboutExit() }
+            }
         }
     }
 }
