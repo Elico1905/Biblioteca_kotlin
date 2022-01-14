@@ -8,6 +8,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import com.elico.biblioteca.Login
 import com.elico.biblioteca.R
 import kotlinx.android.synthetic.main.activity_home.*
@@ -25,8 +26,14 @@ class ActivityHome : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         if (ReadSharedpreferes()){
+            home_name_2.text = "Nombre: ${NAME_USER}"
             home_name.text = "Nombre: ${NAME_USER}"
+            home_matricula_2.text = "Control: ${MATRICULA}"
             home_matricula.text = "Control: ${MATRICULA}"
+            if (PHOTO_USER != "NoPhoto"){
+                Glide.with(this).load(PHOTO_USER).into(home_photo_2)
+                Glide.with(this).load(PHOTO_USER).into(home_photo)
+            }
         }else{
             Toast.makeText(this, "ir a login", Toast.LENGTH_SHORT).show()
         }

@@ -43,11 +43,11 @@
             android:gravity="center">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/recyclerView_photo"
+                android:id="@+id/home_photo_2"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/image_default_woman"/>
+                android:src="@drawable/image_default_man"/>
             <Space
                 android:layout_width="14dp"
                 android:layout_height="wrap_content"/>
@@ -58,7 +58,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/home_name"
+                    android:id="@+id/home_name_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre: Gonzalo"
@@ -68,7 +68,7 @@
                     android:layout_width="0dp"
                     android:layout_height="10dp"/>
                 <TextView
-                    android:id="@+id/home_matricula"
+                    android:id="@+id/home_matricula_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Control: S17030193"
@@ -454,6 +454,7 @@
                     android:fontFamily="sans-serif-black"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/home_photo"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:layout_marginTop="30dp"
@@ -469,6 +470,7 @@
                     android:layout_marginEnd="80dp"/>
 
                 <TextView
+                    android:id="@+id/home_matricula"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -487,6 +489,7 @@
                     android:layout_marginEnd="60dp"/>
 
                 <TextView
+                    android:id="@+id/home_name"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
