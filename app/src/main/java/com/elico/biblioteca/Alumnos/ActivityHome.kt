@@ -1,19 +1,36 @@
 package com.elico.biblioteca.Alumnos
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.elico.biblioteca.Login
 import com.elico.biblioteca.R
 import kotlinx.android.synthetic.main.activity_home.*
 
 class ActivityHome : AppCompatActivity() {
+
+    private var PHOTO_USER:String = ""
+    private var MATRICULA:String = ""
+    private var NAME_USER:String = ""
+    private var EMAIL_USER:String = ""
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        if (ReadSharedpreferes()){
+            home_name.text = "Nombre: ${NAME_USER}"
+            home_matricula.text = "Control: ${MATRICULA}"
+        }else{
+            Toast.makeText(this, "ir a login", Toast.LENGTH_SHORT).show()
+        }
+
 
         home_ListBook.setOnClickListener {
             startActivity(Intent(this, ActivityListBook::class.java))
@@ -25,6 +42,7 @@ class ActivityHome : AppCompatActivity() {
             HideMessageExit()
         }
         home_button_ok.setOnClickListener {
+            DeleteSharedPreferences()
             startActivity(Intent(this, Login::class.java))
             finish()
         }
@@ -86,5 +104,22 @@ class ActivityHome : AppCompatActivity() {
                 home_about.visibility -> { HideBtnAboutExit() }
             }
         }
+    }
+
+    private fun ReadSharedpreferes():Boolean{
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        EMAIL_USER = prefs.getString("email", R.string.prefs_file_key.toString()).toString()
+        NAME_USER = prefs.getString("nombre", R.string.prefs_file_key.toString()).toString()
+        MATRICULA = prefs.getString("matricula", R.string.prefs_file_key.toString()).toString()
+        PHOTO_USER = prefs.getString("photo", R.string.prefs_file_key.toString()).toString()
+
+        return EMAIL_USER != R.string.prefs_file_key.toString() || NAME_USER != R.string.prefs_file_key.toString() ||
+                MATRICULA != R.string.prefs_file_key.toString() || PHOTO_USER != R.string.prefs_file_key.toString()
+    }
+
+    private fun DeleteSharedPreferences() {
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+        prefs.clear()
+        prefs.apply()
     }
 }

@@ -4,19 +4,41 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import com.elico.biblioteca.Alumnos.ActivityHome
+import com.elico.biblioteca.Alumnos.ActivityListBook
 import com.elico.biblioteca.Alumnos.ActivityRegister
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
 
+    private val bd = FirebaseFirestore.getInstance()
+    private val GOOGLE_SING_IN = 100
+
+    private var PhotoUser:String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        if (ReadSharedpreferes()){
+            startActivity(Intent(this, ActivityHome::class.java))
+            finish()
+        }
+
+
 
         login_button_singIn.setOnClickListener {
             if (login_user.text.isNullOrEmpty() || login_password.text.isNullOrEmpty()){
@@ -27,8 +49,14 @@ class Login : AppCompatActivity() {
             }
         }
         login_register.setOnClickListener {
-            startActivity(Intent(this, ActivityRegister::class.java))
-            finish()
+            //startActivity(Intent(this, ActivityRegister::class.java))
+            //finish()
+            bd.collection("users").document("s17030193").set(
+                hashMapOf(
+                    "correo" to "elico1905@gmail.com",
+                    "matricula" to "s17030193",
+                    "nombre" to "Gonzalo",
+                    "pass" to "123456"))
         }
         login_boton_google.setOnClickListener{ GoogleButton() }
         login_button_ok.setOnClickListener { HideMessageError() }
@@ -66,18 +94,122 @@ class Login : AppCompatActivity() {
     }
 
     private fun ShowProcessingData(){
-        startActivity(Intent(this, ActivityHome::class.java))
-        finish()
-        HideProcessingData()
+        //HideProcessingData()
+        bd.collection("users").whereEqualTo("matricula",login_user.text.toString()).get().addOnSuccessListener {
+            var matricula:String  = ""
+            var pass:String = ""
+            var email:String = ""
+            var name:String = ""
+            for (documentos in it){
+                Log.d("Documento","${documentos.data}")
+                matricula = documentos.data.get("matricula").toString()
+                pass = documentos.data.get("pass").toString()
+                email = documentos.data.get("correo").toString()
+                name = documentos.data.get("nombre").toString()
+            }
+            if (matricula.isNotEmpty()){
+                Log.d("GonzaloDev","matricula: ${matricula}, si paso")
+                if (pass == login_password.text.toString()){
+                    message("correcto")
+                    SaveSharedpreferes(email,matricula,"NoPhoto",name)
+                    startActivity(Intent(this, ActivityHome::class.java))
+                    finish()
+                }else{
+                    message("contraseña incorrecta ")
+                }
+            }else{
+                Log.d("GonzaloDev","matricula: ${matricula}, no paso")
+                message("Numero de control no encontrado")
+            }
+        }
+
     }
 
     private fun HideProcessingData(){
 
     }
     private fun GoogleButton(){
+        val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        val googleClient = GoogleSignIn.getClient(this, googleConf)
+        googleClient.signOut()
+        startActivityForResult(googleClient.signInIntent, GOOGLE_SING_IN)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == GOOGLE_SING_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                if (account != null) {
+
+                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+                    FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            PhotoUser = account.photoUrl.toString()
+                            ValidateUser(account.email?:"")
+                        } else {
+                            message("error: No hay cuenta seleccionada")
+                        }
+                    }
+
+                }
+            } catch (e: ApiException) {
+            }
+
+        }
+    }
+
+    private fun ValidateUser(email:String){
+        bd.collection("users").whereEqualTo("correo",email).get().addOnSuccessListener {
+            var matricula:String  = ""
+            var nombre:String = ""
+
+            for (documentos in it){
+                matricula = documentos.data.get("matricula").toString()
+                nombre = documentos.data.get("nombre").toString()
+            }
+            if (matricula.isNotEmpty()){
+                message("correcto")
+                SaveSharedpreferes(email,matricula,PhotoUser,nombre)
+                startActivity(Intent(this, ActivityHome::class.java))
+                finish()
+            }else{
+                message("El correo no esta asociado a ninguna cuenta de gmail")
+            }
+
+        }
+
+
+
 
     }
 
+    private fun SaveSharedpreferes(email:String,matricula:String,photo:String,nombre:String){
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+        prefs.putString("email", email)
+        prefs.putString("nombre", nombre)
+        prefs.putString("matricula", matricula)
+        prefs.putString("photo", photo)
+        prefs.apply()
+    }
+    
+    private fun message(cadena:String){
+        Toast.makeText(this, cadena, Toast.LENGTH_SHORT).show()
+    }
 
+    private fun ReadSharedpreferes():Boolean{
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        var EMAIL_USER = prefs.getString("email", R.string.prefs_file_key.toString()).toString()
+        var NAME_USER = prefs.getString("nombre", R.string.prefs_file_key.toString()).toString()
+        var MATRICULA = prefs.getString("matricula", R.string.prefs_file_key.toString()).toString()
+        var PHOTO_USER = prefs.getString("photo", R.string.prefs_file_key.toString()).toString()
+
+        return EMAIL_USER != R.string.prefs_file_key.toString() || NAME_USER != R.string.prefs_file_key.toString() ||
+                MATRICULA != R.string.prefs_file_key.toString() || PHOTO_USER != R.string.prefs_file_key.toString()
+    }
 
 }

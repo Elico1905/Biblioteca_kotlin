@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "481607037994",
+    "project_id": "biblioteca-ebc23",
+    "storage_bucket": "biblioteca-ebc23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481607037994:android:a1d42261db3f2b74343f53",
+        "android_client_info": {
+          "package_name": "com.elico.biblioteca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481607037994-nvimatpejjjas37lro4b36pnbf2b9jro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elico.biblioteca",
+            "certificate_hash": "97550f810436bb6fe851f289468a02db11f1bda6"
+          }
+        },
+        {
+          "client_id": "481607037994-sr7nm9fe5l5uev82p4ob0otgiocssjf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC82T8pIrm9b07F3QoBoiGfCstXc-8qLwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481607037994-sr7nm9fe5l5uev82p4ob0otgiocssjf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
