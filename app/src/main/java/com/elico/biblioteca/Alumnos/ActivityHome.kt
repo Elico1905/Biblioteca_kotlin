@@ -63,6 +63,8 @@ class ActivityHome : AppCompatActivity() {
 
 
     private fun ShowMessageExit(){
+        
+
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.blue_shadow)
 

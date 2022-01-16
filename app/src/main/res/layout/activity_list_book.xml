@@ -32,89 +32,17 @@
 
     <LinearLayout
         android:paddingTop="160dp"
-        android:paddingEnd="20dp"
-        android:paddingStart="20dp"
-        android:paddingBottom="20dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/test"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listBook_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:foreground="?android:selectableItemBackground"
-            app:cardCornerRadius="15dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="140dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/image_book_test" />
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Nombre:"
-                        android:textSize="20dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="Programacion orientada a objetos"
-                        android:textSize="16dp"
-                        android:maxLength="30"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/blue"
-                        android:textSize="1dp"
-                        android:layout_marginTop="10dp"/>
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Editorial:"
-                        android:textSize="20dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="Alba"
-                        android:textSize="16dp"
-                        android:maxLength="30"/>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_recyclerview_list_book"/>
 
 
     </LinearLayout>
@@ -143,6 +71,7 @@
             android:layout_marginBottom="-20dp">
 
             <ScrollView
+                android:id="@+id/ListBook_ScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -159,101 +88,114 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="250dp"
-                            android:src="@drawable/image_book_test"
-                            android:scaleType="centerInside"/>
+                            android:scaleType="centerInside"
+                            android:src="@drawable/image_book_test" />
 
                         <TextView
-                            android:layout_marginTop="30dp"
+                            android:id="@+id/ListBook_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="sans-serif-black"
                             android:text="Nombre: Programacion Orientada a Objetos"
-                            android:textSize="22dp"
-                            android:fontFamily="sans-serif-black"/>
+                            android:textSize="22dp" />
 
                         <TextView
-                            android:layout_marginTop="15dp"
+                            android:id="@+id/ListBook_editorial"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
                             android:text="Editorial: Alba"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
 
                         <TextView
-                            android:layout_marginTop="15dp"
+                            android:id="@+id/ListBook_author"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
                             android:text="Autor: Jaime Lopez becerril"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
 
 
                         <TextView
-                            android:layout_marginTop="15dp"
+                            android:id="@+id/ListBook_edition"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
                             android:text="Edicion: Quinta edicion"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/ListBook_pages"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:text="Paginas: 462 Paginas"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
 
                         <TextView
-                            android:layout_marginTop="30dp"
+                            android:id="@+id/ListBook_button_reserve"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAlignment="center"
-                            android:text="Reservar"
-                            android:textColor="@color/white"
-                            android:background="@drawable/effect_radius_edidttext_blue_1"
-                            android:padding="5dp"
-                            android:foreground="@drawable/effect_ripple_white"
-                            android:clickable="true"
-                            android:textSize="19sp"
                             android:layout_marginStart="20sp"
-                            android:layout_marginEnd="20sp"/>
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="20sp"
+                            android:background="@drawable/effect_radius_edidttext_blue_1"
+                            android:clickable="true"
+                            android:foreground="@drawable/effect_ripple_white"
+                            android:padding="5dp"
+                            android:text="Reservar"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="19sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="#A3232323"
-                            android:layout_marginTop="35dp"/>
+                            android:layout_marginTop="35dp"
+                            android:background="#A3232323" />
+
                         <TextView
-                            android:layout_marginTop="25dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Opiniones sobre el libro"
-                            android:textSize="25dp"
+                            android:layout_marginTop="25dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Calificacion del libro"
                             android:textAlignment="center"
-                            android:fontFamily="sans-serif-black"/>
+                            android:textSize="25dp" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_gravity="center">
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
                             <TextView
-                                android:layout_marginTop="15dp"
+                                android:id="@+id/ListBook_calification"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
                                 android:text="4.0"
-                                android:textSize="60dp"/>
+                                android:textSize="60dp"
+                                android:maxLength="3"/>
+
                             <Space
                                 android:layout_width="10dp"
-                                android:layout_height="0dp"/>
+                                android:layout_height="0dp" />
+
                             <RatingBar
-                                android:layout_marginTop="20dp"
+                                android:id="@+id/ListBook_calification_star"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:numStars="5"
-                                android:rating="4"
-                                android:stepSize="0.5"
-                                android:progressTint="@color/yellow_Star"
                                 android:layout_gravity="center"
+                                android:layout_marginTop="20dp"
                                 android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="@color/yellow_Star"
+                                android:rating="0"
                                 android:scaleX=".7"
                                 android:scaleY=".7"
+                                android:stepSize="0.1"
                                 android:transformPivotX="0dp"
                                 android:transformPivotY="0dp" />
                         </LinearLayout>
@@ -261,78 +203,36 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="#A3232323"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="10dp"
+                            android:background="#A3232323" />
 
-                        <LinearLayout
-                            android:layout_marginTop="20sp"
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <RatingBar
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:numStars="5"
-                                android:rating="2"
-                                android:stepSize="0.5"
-                                android:progressTint="@color/yellow_Star"
-                                android:isIndicator="true"
-                                android:scaleX=".4"
-                                android:scaleY=".4"
-                                android:transformPivotX="0dp"
-                                android:transformPivotY="0dp"/>
+                            android:layout_marginTop="25dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Opiniones sobre el libro"
+                            android:textAlignment="center"
+                            android:textSize="25dp" />
 
-                            <TextView
-                                android:layout_marginTop="-35dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Juan Gonzales"
-                                android:textSize="22dp"
-                                android:fontFamily="sans-serif-black"/>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/test"
-                                android:textSize="18dp"
-                                android:justificationMode="inter_word"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_marginTop="20sp"
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/ListBook_message_null_calification"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <RatingBar
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:numStars="5"
-                                android:rating="5"
-                                android:stepSize="0.5"
-                                android:progressTint="@color/yellow_Star"
-                                android:isIndicator="true"
-                                android:scaleX=".4"
-                                android:scaleY=".4"
-                                android:transformPivotX="0dp"
-                                android:transformPivotY="0dp"/>
+                            android:layout_marginTop="25dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Aun nadie ha calificado este libro"
+                            android:textAlignment="center"
+                            android:textSize="35dp" />
 
-                            <TextView
-                                android:layout_marginTop="-35dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Pedro Alvarez"
-                                android:textSize="22dp"
-                                android:fontFamily="sans-serif-black"/>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/test"
-                                android:textSize="18dp"
-                                android:justificationMode="inter_word"/>
-
-                        </LinearLayout>
+                       <androidx.recyclerview.widget.RecyclerView
+                           android:id="@+id/ListBook_recyclerview_comments"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="20sp"
+                           android:nestedScrollingEnabled="false"
+                           tools:listitem="@layout/item_recyclerview_list_book_comments"/>
 
 
                     </LinearLayout>
@@ -350,8 +250,8 @@
 
                 <ImageView
                     android:id="@+id/ListBook_btn_Exit"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_marginTop="20sp"
                     android:layout_marginEnd="20sp"
                     android:clickable="true"
