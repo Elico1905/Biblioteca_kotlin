@@ -19,14 +19,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:background="@color/blue" />
+                android:background="@color/green" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="bottom"
                 android:scaleType="centerCrop"
-                android:src="@drawable/svg_superior_2" />
+                android:src="@drawable/svg_superior_curve_green" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -48,7 +48,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:src="@drawable/vector_arrow_back"
-                android:foreground="@drawable/effect_ripple_blue_color"
+                android:foreground="@drawable/effect_ripple_green_color"
                 android:clickable="true"/>
         </LinearLayout>
 

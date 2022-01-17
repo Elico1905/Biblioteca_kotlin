@@ -57,7 +57,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/blue"
+                    android:background="@color/hide_black"
                     android:textSize="1dp"
                     android:layout_marginTop="10dp"/>
                 <LinearLayout

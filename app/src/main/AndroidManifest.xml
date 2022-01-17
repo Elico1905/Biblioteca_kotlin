@@ -15,7 +15,7 @@
             android:name=".Alumnos.ActivityInProcess"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.BibliotecaFull" />
+            android:theme="@style/Theme.BibliotecaStar" />
         <activity
             android:name=".Alumnos.ActivityListBook"
             android:exported="true"

@@ -107,7 +107,7 @@ class ActivityListBook : AppCompatActivity() {
 
     private fun HideAbout(){
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-        window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.blue)
+        window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.green)
 
         ListBook_fondo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
         ListBook_fondo.visibility = View.GONE
