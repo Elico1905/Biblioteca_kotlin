@@ -30,8 +30,60 @@
         </LinearLayout>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ListBook_button_back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/vector_arrow_back"
+                android:foreground="@drawable/effect_ripple_blue_color"
+                android:clickable="true"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Lista de libros"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
     <LinearLayout
-        android:paddingTop="160dp"
+        android:paddingTop="130dp"
         android:paddingEnd="10dp"
         android:paddingStart="10dp"
         android:layout_width="match_parent"
@@ -86,10 +138,10 @@
                         android:padding="30dp">
 
                         <ImageView
+                            android:id="@+id/ListBook_photo"
                             android:layout_width="match_parent"
                             android:layout_height="250dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/image_book_test" />
+                            android:scaleType="centerInside" />
 
                         <TextView
                             android:id="@+id/ListBook_name"
@@ -175,9 +227,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="15dp"
+                                android:maxLength="3"
                                 android:text="4.0"
-                                android:textSize="60dp"
-                                android:maxLength="3"/>
+                                android:textSize="60dp" />
 
                             <Space
                                 android:layout_width="10dp"
@@ -207,6 +259,7 @@
                             android:background="#A3232323" />
 
                         <TextView
+                            android:id="@+id/Listbook_hide"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="25dp"
@@ -216,7 +269,6 @@
                             android:textSize="25dp" />
 
                         <TextView
-                            android:visibility="gone"
                             android:id="@+id/ListBook_message_null_calification"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -224,15 +276,16 @@
                             android:fontFamily="sans-serif-black"
                             android:text="Aun nadie ha calificado este libro"
                             android:textAlignment="center"
-                            android:textSize="35dp" />
+                            android:textSize="35dp"
+                            android:visibility="gone" />
 
-                       <androidx.recyclerview.widget.RecyclerView
-                           android:id="@+id/ListBook_recyclerview_comments"
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
-                           android:layout_marginTop="20sp"
-                           android:nestedScrollingEnabled="false"
-                           tools:listitem="@layout/item_recyclerview_list_book_comments"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/ListBook_recyclerview_comments"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20sp"
+                            android:nestedScrollingEnabled="false"
+                            tools:listitem="@layout/item_recyclerview_list_book_comments" />
 
 
                     </LinearLayout>

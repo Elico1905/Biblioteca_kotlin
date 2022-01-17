@@ -1,5 +1,6 @@
 package com.elico.biblioteca.Alumnos
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +24,10 @@ class ActivityListBook : AppCompatActivity() {
 
     private val bd = FirebaseFirestore.getInstance()
     private lateinit var adapter: AdapterListBook
-    var lista = mutableListOf<ModelListBook>();
+    var lista = mutableListOf<ModelListBook>()
+
+    var POSITION:Int = -1
+    var MATRICULA:String = ""
 
     private lateinit var adapterComments: AdapterListBookComments
     var listaComments = mutableListOf<ModelListBookComments>();
@@ -32,14 +36,24 @@ class ActivityListBook : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_book)
 
+        val bundle = intent.extras
+        MATRICULA = bundle?.getString("matricula").toString()
+        if (MATRICULA == ""){
+            Toast.makeText(this, "error de alumno", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ActivityHome::class.java))
+        }
+
         ListBook_btn_Exit.setOnClickListener {
             HideAbout()
         }
 
         ListBook_button_reserve.setOnClickListener {
-
+           VerifyReserver()
         }
 
+        ListBook_button_back.setOnClickListener {
+            finish()
+        }
 
         adapter = AdapterListBook(this)
 
@@ -49,21 +63,21 @@ class ActivityListBook : AppCompatActivity() {
 //            lista.add(ModelListBook("Nombre $i","Editorial $i","Autor $i",i,i,"uno","uno"))
 //        }
 
-        bd.collection("books").endAt().get().addOnSuccessListener {
+        bd.collection("books").get().addOnSuccessListener {
                 for (documentos in it){
-                    Log.d("Documentos","${documentos.data.get("id")}")
+                    //Log.d("Documentos","${documentos.data.get("id")}")
                     lista.add(ModelListBook(
                         documentos.data.get("name").toString(),
                         documentos.data.get("editorial").toString(),
                         documentos.data.get("author").toString(),
                         "${documentos.data.get("edition")}".toInt(),
                         "${documentos.data.get("pages")}".toInt(),
-                        "null",
+                        documentos.data.get("photo").toString(),
                         documentos.data.get("id").toString()))
                 }
-            adapter.setListData(lista)
-            adapter.notifyDataSetChanged()
-            lista = adapter.returnListData()
+                adapter.setListData(lista)
+                adapter.notifyDataSetChanged()
+                lista = adapter.returnListData()
             }
     }
 
@@ -72,7 +86,8 @@ class ActivityListBook : AppCompatActivity() {
             HideAbout()
         }else{
             if (ListBook_fondo.visibility == View.GONE){
-                super.onBackPressed()
+                //super.onBackPressed()
+                  finish()
             }
         }
 
@@ -107,7 +122,7 @@ class ActivityListBook : AppCompatActivity() {
         ListBook_calification_star.rating = 0f
         ListBook_message_null_calification.visibility = View.GONE
 
-        Log.d("Documento","${id}")
+        //Log.d("Documento","${id}")
 
         adapterComments = AdapterListBookComments(this)
 
@@ -117,7 +132,6 @@ class ActivityListBook : AppCompatActivity() {
         bd.collection("comments").whereEqualTo("book","${id}").get().addOnSuccessListener {
             var NumUser:Int = 0
             var points:Int = 0
-
             for (documentos in it){
                 //Log.d("Documentos","${documentos}")
                 NumUser++
@@ -130,19 +144,60 @@ class ActivityListBook : AppCompatActivity() {
                         documentos.get("comment").toString()))
             }
                 if (NumUser>0){
+                    Listbook_hide.visibility = View.VISIBLE
                     var resul:Float = points / NumUser.toFloat()
                     ListBook_calification.text = "${resul}"
                     ListBook_calification_star.rating = resul
                 }else{
                     ListBook_message_null_calification.visibility = View.VISIBLE
+                    Listbook_hide.visibility = View.GONE
                 }
             adapterComments.setListData(listaComments)
             adapterComments.notifyDataSetChanged()
             listaComments = adapterComments.returnListData()
         }
-
-
     }
 
+    private fun VerifyReserver(){
+        bd.collection("trajectory")
+            .whereEqualTo("book_id","${lista.get(POSITION).id}")
+            .whereEqualTo("matricula","${MATRICULA}")
+            .whereEqualTo("book_name","${lista.get(POSITION).name}")
+            .whereEqualTo("process",true)
+            .get().addOnSuccessListener {
+                var id:String = ""
+                for (documentos in it){
+                    id = documentos.data.get("book_id").toString()
+                    Log.d("Documentos",documentos.data.toString())
+                }
+                if (id.isNotEmpty()){
+                    Toast.makeText(this, "ya lo reservaste", Toast.LENGTH_SHORT).show()
+                }else{
+                    ReserverBook()
+                }
+        }
+    }
 
+    private fun ReserverBook(){
+        bd.collection("trajectory").document().set(
+            hashMapOf(
+                "book_id" to "${lista.get(POSITION).id}",
+                "book_name" to "${lista.get(POSITION).name}",
+                "book_photo" to "${lista.get(POSITION).photo}",
+                "matricula" to "${MATRICULA}",
+                "menssage" to "",
+                "answer" to false,
+                "delivered" to false,
+                "returned" to false,
+                "cancel" to false,
+                "date_answer" to "",
+                "date_delivred" to "",
+                "date_retured" to "",
+                "process" to true,
+                "alu_cancel" to false,
+                "alu_date" to "hoy"
+            ))
+
+        Toast.makeText(this, "reservado", Toast.LENGTH_SHORT).show()
+    }
 }

@@ -40,7 +40,10 @@ class ActivityHome : AppCompatActivity() {
 
 
         home_ListBook.setOnClickListener {
-            startActivity(Intent(this, ActivityListBook::class.java))
+            startActivity(Intent(this, ActivityListBook::class.java).putExtra("matricula",MATRICULA))
+        }
+        home_process.setOnClickListener {
+            startActivity(Intent(this, ActivityInProcess::class.java).putExtra("matricula",MATRICULA))
         }
         home_button_exit.setOnClickListener {
             ShowMessageExit()
