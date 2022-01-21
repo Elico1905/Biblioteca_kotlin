@@ -39,18 +39,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/home_photo_2"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/image_default_man"/>
+                android:src="@drawable/image_default_man" />
+
             <Space
                 android:layout_width="14dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -62,18 +63,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre: Gonzalo"
-                    android:textSize="17dp"
-                    android:textColor="@color/iletters_white"/>
+                    android:textColor="@color/iletters_white"
+                    android:textSize="17dp" />
+
                 <Space
                     android:layout_width="0dp"
-                    android:layout_height="10dp"/>
+                    android:layout_height="10dp" />
+
                 <TextView
                     android:id="@+id/home_matricula_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Control: S17030193"
-                    android:textSize="17dp"
-                    android:textColor="@color/iletters_white"/>
+                    android:textColor="@color/iletters_white"
+                    android:textSize="17dp" />
 
             </LinearLayout>
 
@@ -86,18 +89,17 @@
                 android:id="@+id/home_button_exit"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/effect_radius_white"
+                android:clickable="true"
+                android:foreground="@drawable/effect_ripple_blue_color"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
-                android:background="@drawable/effect_radius_white"
                 android:text="@string/home_exit_text"
-                android:textSize="18dp"
-                android:textColor="@color/hide_black"
                 android:textAlignment="center"
-                android:foreground="@drawable/effect_ripple_blue_color"
-                android:clickable="true"/>
+                android:textColor="@color/hide_black"
+                android:textSize="18dp" />
 
         </LinearLayout>
-
 
 
     </RelativeLayout>
@@ -105,44 +107,45 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
+        android:layout_marginEnd="20dp"
+        android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/home_ListBook"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                app:cardCornerRadius="20dp"
-                android:foreground="@drawable/effect_ripple_itsch_white"
                 android:backgroundTint="@color/green"
-                android:clickable="true">
+                android:clickable="true"
+                android:foreground="@drawable/effect_ripple_itsch_white"
+                app:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/vector_book"/>
+                        android:src="@drawable/vector_book" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
                         android:text="@string/home_text1"
                         android:textAlignment="center"
-                        android:textSize="25dp"
-                        android:fontFamily="sans-serif"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white"
+                        android:textSize="25dp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -151,76 +154,79 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/test"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
-                    app:cardCornerRadius="20dp"
-                    android:foreground="@drawable/effect_ripple_itsch_white"
                     android:backgroundTint="@color/purple_button"
-                    android:clickable="true">
+                    android:clickable="true"
+                    android:foreground="@drawable/effect_ripple_itsch_white"
+                    app:cardCornerRadius="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:gravity="center_vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/vector_bag"/>
+                            android:src="@drawable/vector_bag" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
                             android:text="@string/home_text2"
                             android:textAlignment="center"
-                            android:textSize="20dp"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
                 <Space
                     android:layout_width="15dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/home_section_message"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
-                    app:cardCornerRadius="20dp"
-                    android:foreground="@drawable/effect_ripple_itsch_white"
                     android:backgroundTint="@color/blue"
-                    android:clickable="true">
+                    android:clickable="true"
+                    android:foreground="@drawable/effect_ripple_itsch_white"
+                    app:cardCornerRadius="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:gravity="center_vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/vector_message"/>
+                            android:src="@drawable/vector_message" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
                             android:text="@string/home_text3"
                             android:textAlignment="center"
-                            android:textSize="20dp"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -230,33 +236,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:layout_marginTop="25dp"
-                app:cardCornerRadius="20dp"
-                android:foreground="@drawable/effect_ripple_itsch_white"
                 android:backgroundTint="@color/blue"
-                android:clickable="true">
+                android:clickable="true"
+                android:foreground="@drawable/effect_ripple_itsch_white"
+                app:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:id="@+id/home_section_profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/vector_person"/>
+                        android:src="@drawable/vector_person" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
                         android:text="@string/home_text4"
                         android:textAlignment="center"
-                        android:textSize="25dp"
-                        android:fontFamily="sans-serif"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white"
+                        android:textSize="25dp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -264,77 +270,78 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
-                    app:cardCornerRadius="20dp"
-                    android:foreground="@drawable/effect_ripple_itsch_white"
                     android:backgroundTint="@color/purple_button"
-                    android:clickable="true">
+                    android:clickable="true"
+                    android:foreground="@drawable/effect_ripple_itsch_white"
+                    app:cardCornerRadius="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:gravity="center_vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/vector_history"/>
+                            android:src="@drawable/vector_history" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
                             android:text="@string/home_text5"
                             android:textAlignment="center"
-                            android:textSize="20dp"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
                 <Space
                     android:layout_width="15dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/home_process"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
-                    app:cardCornerRadius="20dp"
-                    android:foreground="@drawable/effect_ripple_itsch_white"
                     android:backgroundTint="@color/green"
-                    android:clickable="true">
+                    android:clickable="true"
+                    android:foreground="@drawable/effect_ripple_itsch_white"
+                    app:cardCornerRadius="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:gravity="center_vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/vector_process"/>
+                            android:src="@drawable/vector_process" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
                             android:text="@string/home_text6"
                             android:textAlignment="center"
-                            android:textSize="20dp"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -344,80 +351,83 @@
         </LinearLayout>
 
 
-
-
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/home_fondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:background="@color/hide_black"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/home_message"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center|bottom">
+        android:gravity="center|bottom"
+        android:visibility="gone">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:cardCornerRadius="20dp"
-            android:layout_marginBottom="-20dp">
+            android:layout_marginBottom="-20dp"
+            app:cardCornerRadius="20dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¿Seguro que deseas salir?"
-                    android:layout_marginEnd="20sp"
                     android:layout_marginStart="20sp"
-                    android:textSize="25dp"
-                    android:textAlignment="center"/>
+                    android:layout_marginEnd="20sp"
+                    android:text="¿Seguro que deseas salir?"
+                    android:textAlignment="center"
+                    android:textSize="25dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="30dp"
                     android:layout_marginStart="20sp"
-                    android:layout_marginEnd="20sp">
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20sp"
+                    android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/home_button_cancel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="Cancelar"
-                        android:textColor="@color/white"
                         android:background="@drawable/effect_radius_edidttext_blue_1"
-                        android:padding="5dp"
-                        android:foreground="@drawable/effect_ripple_white"
                         android:clickable="true"
-                        android:textSize="19sp"/>
+                        android:foreground="@drawable/effect_ripple_white"
+                        android:padding="5dp"
+                        android:text="Cancelar"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="19sp" />
+
                     <Space
                         android:layout_width="20sp"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
+
                     <TextView
                         android:id="@+id/home_button_ok"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="Continuar"
-                        android:textColor="@color/white"
                         android:background="@drawable/effect_radius_edidttext_blue_1"
-                        android:padding="5dp"
-                        android:foreground="@drawable/effect_ripple_white"
                         android:clickable="true"
-                        android:textSize="19sp"/>
+                        android:foreground="@drawable/effect_ripple_white"
+                        android:padding="5dp"
+                        android:text="Continuar"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="19sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -427,119 +437,159 @@
 
     <RelativeLayout
         android:id="@+id/home_about"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center|bottom">
+        android:gravity="center|bottom"
+        android:visibility="gone">
 
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="20dp"
-            android:layout_marginBottom="-20dp">
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="-20dp"
+            app:cardCornerRadius="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="30dp"
-                android:orientation="vertical">
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical"
+                android:paddingTop="30dp">
 
                 <TextView
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
                     android:text="Informacion del alumno"
-                    android:textSize="30dp"
                     android:textAlignment="center"
-                    android:fontFamily="sans-serif-black"/>
+                    android:textSize="30dp" />
+
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/home_photo"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
                     android:src="@drawable/image_default_man"
                     android:layout_gravity="center"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginEnd="5dp"
                     android:background="@color/blue"
-                    android:textSize="1dp"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginEnd="80dp"/>
+                    android:textSize="1dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="sans-serif-black"
+                    android:paddingEnd="20dp"
+                    android:text="Nombre:"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/home_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:text="Gonzalo"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:paddingEnd="20dp"
+                    android:text="Apellido Paterno:"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Ballesteros"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:paddingEnd="20dp"
+                    android:text="Apellido Materno:"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Martínez"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@color/blue"
+                    android:textSize="1dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Matricula:"
+                    android:textSize="25dp" />
 
                 <TextView
                     android:id="@+id/home_matricula"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="S17030193"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Matricula: S17030193"
-                    android:textSize="20dp"
-                    android:textAlignment="center"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/blue"
-                    android:textSize="1dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="60dp"/>
-
-                <TextView
-                    android:id="@+id/home_name"
                     android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre: Gonzalo"
-                    android:textSize="20dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textAlignment="center"/>
-
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="Apellidos"
-                    android:textSize="16dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textAlignment="center"/>
-
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="4dp"
-                    android:text="Paterno: Ballesteros"
-                    android:textSize="20dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textAlignment="center"/>
-
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="4dp"
-                    android:text="Materno: Martínez"
-                    android:textSize="20dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textAlignment="center"/>
+                    android:text="Email:"
+                    android:textSize="25dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/blue"
-                    android:textSize="1dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"/>
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="elico1904@gmail.com"
+                    android:textSize="20dp" />
+
+
+
 
             </LinearLayout>
 

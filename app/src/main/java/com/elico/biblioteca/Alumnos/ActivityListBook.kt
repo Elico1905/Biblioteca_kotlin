@@ -96,7 +96,7 @@ class ActivityListBook : AppCompatActivity() {
 
     fun ShowAbout(){
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.blue_shadow)
+        window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.green_shadow)
 
         ListBook_fondo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
         ListBook_fondo.visibility = View.VISIBLE
@@ -116,7 +116,6 @@ class ActivityListBook : AppCompatActivity() {
     }
 
     fun GetComments(id:String){
-
         listaComments.clear()
         ListBook_calification.text = "0"
         ListBook_calification_star.rating = 0f

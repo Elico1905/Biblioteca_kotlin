@@ -38,7 +38,7 @@ class AdapterProcess (private val context: Context): RecyclerView.Adapter<Adapte
         val process = datalist[position]
         holder.itemView.item_process_button.setOnClickListener {
             if(context is ActivityInProcess){
-                Toast.makeText(context, "eliminar: ${process.id}", Toast.LENGTH_SHORT).show()
+                context.ShowMessageCancel()
             }
         }
         holder.bindView(process)

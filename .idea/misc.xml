@@ -42,9 +42,13 @@
         <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/activity_list_book.xml" value="0.2" />
         <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/activity_login.xml" value="0.22153846153846155" />
         <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/activity_message.xml" value="0.18947368421052632" />
+        <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/activity_messages.xml" value="0.18947368421052632" />
         <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/activity_register.xml" value="0.2109375" />
+        <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/activity_test.xml" value="0.18947368421052632" />
         <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/item_recyclerview_list_book.xml" value="0.33" />
         <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/item_recyclerview_list_book_comments.xml" value="0.18947368421052632" />
+        <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/item_recyclerview_messages.xml" value="0.18947368421052632" />
         <entry key="..\:/Users/Ballesteros/AndroidStudioProjects/Biblioteca_kotlin/app/src/main/res/layout/item_recyclerview_process.xml" value="0.18947368421052632" />
       </map>
     </option>

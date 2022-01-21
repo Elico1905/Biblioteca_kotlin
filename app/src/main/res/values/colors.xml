@@ -11,8 +11,8 @@
 
     <color name="circle_orange">#FF5722</color>
     <color name="yellow_Star">#FFC107</color>
-
     <color name="green">#39A927</color>
+    <color name="green_shadow">#294624</color>
     <color name="purple_button">#AA00FF</color>
 
 </resources>
