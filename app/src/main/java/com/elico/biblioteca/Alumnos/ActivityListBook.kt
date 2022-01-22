@@ -100,6 +100,9 @@ class ActivityListBook : AppCompatActivity() {
 
         ListBook_fondo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
         ListBook_fondo.visibility = View.VISIBLE
+
+        ListBook_ScrollView.fullScroll(ScrollView.FOCUS_UP)
+
         ListBook_About.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_up))
         ListBook_About.visibility = View.VISIBLE
     }

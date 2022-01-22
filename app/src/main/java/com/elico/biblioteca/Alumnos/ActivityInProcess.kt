@@ -91,6 +91,15 @@ class ActivityInProcess : AppCompatActivity() {
     }
 
 
-
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        if(process_fondo.visibility == View.VISIBLE){
+            if (process_message_confirmation.visibility == View.VISIBLE){
+                HideMessageCancel()
+            }
+        }else{
+            finish()
+        }
+    }
 
 }

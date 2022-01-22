@@ -43,7 +43,7 @@ class AdapterListBook(private val context: Context):RecyclerView.Adapter<Adapter
             if(context is ActivityListBook){
                 context.GetComments(book.id)
                 Glide.with(context).load(book.photo).into(context.ListBook_photo)
-                context.ListBook_ScrollView.fullScroll(ScrollView.FOCUS_UP)
+
                 context.ListBook_name.text = "Nombre: ${book.name}"
                 context.ListBook_editorial.text = "Editorial: ${book.editorial}"
                 context.ListBook_author.text = "Autor: ${book.author}"
