@@ -38,6 +38,11 @@ class AdapterProcess (private val context: Context): RecyclerView.Adapter<Adapte
         val process = datalist[position]
         holder.itemView.item_process_button.setOnClickListener {
             if(context is ActivityInProcess){
+                context.BOOK_ID = datalist[position].id_book
+                context.BOOK_NAME = datalist[position].name
+                context.BOOK_PHOTO = datalist[position].photo
+                context.BOOK_RESERVATION_ID = datalist[position].reservation_id
+                context.RECYCLERVIEW_POSITION = position
                 context.ShowMessageCancel()
             }
         }

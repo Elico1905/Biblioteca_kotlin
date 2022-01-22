@@ -51,6 +51,8 @@ class AdapterListBook(private val context: Context):RecyclerView.Adapter<Adapter
                 context.ListBook_pages.text = "Paginas: ${book.pages}"
                 context.POSITION = position
                 context.ShowAbout()
+
+                context.ListBook_ScrollView.fullScroll(ScrollView.FOCUS_UP)
             }
         }
         holder.bindView(book)

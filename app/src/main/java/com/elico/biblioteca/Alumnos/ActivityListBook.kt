@@ -42,7 +42,6 @@ class ActivityListBook : AppCompatActivity() {
             Toast.makeText(this, "error de alumno", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, ActivityHome::class.java))
         }
-
         ListBook_btn_Exit.setOnClickListener {
             HideAbout()
         }
@@ -100,8 +99,6 @@ class ActivityListBook : AppCompatActivity() {
 
         ListBook_fondo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
         ListBook_fondo.visibility = View.VISIBLE
-
-        ListBook_ScrollView.fullScroll(ScrollView.FOCUS_UP)
 
         ListBook_About.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_up))
         ListBook_About.visibility = View.VISIBLE
@@ -200,6 +197,41 @@ class ActivityListBook : AppCompatActivity() {
                 "alu_date" to "hoy"
             ))
 
+        bd.collection("trajectory")
+            .whereEqualTo("book_id","${lista.get(POSITION).id}")
+            .whereEqualTo("book_name","${lista.get(POSITION).name}")
+            .whereEqualTo("book_photo","${lista.get(POSITION).photo}")
+            .whereEqualTo("matricula","${MATRICULA}")
+            .whereEqualTo("process",true).get().addOnSuccessListener {
+                for (documentos in it){
+                    ReserverBook(documentos.id)
+                    break
+                }
+
+            }
+
         Toast.makeText(this, "reservado", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun ReserverBook(reservation_id:String){
+        bd.collection("trajectory").document(reservation_id).set(
+            hashMapOf(
+                "book_id" to "${lista.get(POSITION).id}",
+                "book_name" to "${lista.get(POSITION).name}",
+                "book_photo" to "${lista.get(POSITION).photo}",
+                "matricula" to "${MATRICULA}",
+                "menssage" to "",
+                "answer" to false,
+                "delivered" to false,
+                "returned" to false,
+                "cancel" to false,
+                "date_answer" to "",
+                "date_delivred" to "",
+                "date_retured" to "",
+                "process" to true,
+                "alu_cancel" to false,
+                "alu_date" to "hoy",
+                "reservation_id" to "${reservation_id}"
+            ))
     }
 }

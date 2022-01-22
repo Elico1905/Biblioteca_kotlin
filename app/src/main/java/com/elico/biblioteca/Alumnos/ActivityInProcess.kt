@@ -23,6 +23,12 @@ class ActivityInProcess : AppCompatActivity() {
     private lateinit var adapter: AdapterProcess
     var MATRICULA:String = ""
 
+    var BOOK_ID:String = ""
+    var BOOK_NAME:String = ""
+    var BOOK_PHOTO:String = ""
+    var BOOK_RESERVATION_ID:String = ""
+    var RECYCLERVIEW_POSITION:Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_in_process)
@@ -35,7 +41,46 @@ class ActivityInProcess : AppCompatActivity() {
             startActivity(Intent(this, ActivityHome::class.java))
         }
         process_button_option_ok.setOnClickListener {
+            if(BOOK_ID != "" || BOOK_NAME != "" || BOOK_PHOTO != "" || BOOK_RESERVATION_ID != ""){
+                bd.collection("trajectory")
+                    .document(BOOK_RESERVATION_ID)
+                    .set(
+                    hashMapOf(
+                        "book_id" to "${BOOK_ID}",
+                        "book_name" to "${BOOK_NAME}",
+                        "book_photo" to "${BOOK_PHOTO}",
+                        "matricula" to "${MATRICULA}",
+                        "menssage" to "",
+                        "answer" to false,
+                        "delivered" to false,
+                        "returned" to false,
+                        "cancel" to false,
+                        "date_answer" to "",
+                        "date_delivred" to "",
+                        "date_retured" to "",
+                        "process" to false,
+                        "alu_cancel" to true,
+                        "alu_date" to "hoy",
+                        "reservation_id" to "${BOOK_RESERVATION_ID}"
+                    ))
 
+
+                lista.removeAt(RECYCLERVIEW_POSITION)
+
+                if (lista.size > 0){
+                    process_message.visibility = View.GONE
+                    adapter.notifyDataSetChanged()
+                    Log.d("Documento","tamaño de lista -> ${lista.size}")
+                }else{
+                    Log.d("Documento","no hay libros en proceso aun")
+                    process_recyclerview.visibility = View.GONE
+                    process_message.visibility = View.VISIBLE
+                }
+
+                Toast.makeText(this, "se cancelo la reservacion", Toast.LENGTH_SHORT).show()
+
+            }
+            HideMessageCancel()
         }
         process_button_option_cancel.setOnClickListener {
             HideMessageCancel()
@@ -54,7 +99,8 @@ class ActivityInProcess : AppCompatActivity() {
                 for (documentos in it){
                     lista.add(ModelProcess(documentos.data.get("book_name").toString(),
                         documentos.data.get("book_photo").toString(),
-                        documentos.data.get("book_id").toString()))
+                        documentos.data.get("book_id").toString(),
+                        documentos.data.get("reservation_id").toString()))
                 }
                 if (lista.size > 0){
                     process_message.visibility = View.GONE

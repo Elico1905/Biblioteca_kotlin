@@ -16,7 +16,9 @@
             android:exported="false" />
         <activity
             android:name=".Alumnos.ActivityMessages"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BibliotecaFull"/>
         <activity
             android:name=".Alumnos.ActivityInProcess"
             android:exported="false"
