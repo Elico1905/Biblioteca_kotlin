@@ -23,12 +23,9 @@ class ActivityTest : AppCompatActivity() {
         list.add(Books("Enigmas De La Humanidad","Pedro Silva","Ediciones Corona Borealis","308","5","","https://firebasestorage.googleapis.com/v0/b/biblioteca-ebc23.appspot.com/o/books%2Fimagen6.jpg?alt=media&token=4dba084d-14fc-4309-b293-50baf95aa266"))
         list.add(Books("The Culture Code","Daniel Coyle","Bantam","304","5","","https://firebasestorage.googleapis.com/v0/b/biblioteca-ebc23.appspot.com/o/books%2Fimagen8.jpg?alt=media&token=2f43ec7c-e2f0-44e2-9c0e-1da8dc67106d"))
 
-        Log.d("Documentos","subiendo libros...")
+
 
         for(i in 0..4){
-            Log.d("Documento","${list.get(i).name}," +
-                    "${list.get(i).autor},${list.get(i).editorial},${list.get(i).edicion}," +
-                    "${list.get(i).paginas},${list.get(i).photo}")
 //
 //        bd.collection("books").document().set(
 //            hashMapOf(
@@ -43,7 +40,7 @@ class ActivityTest : AppCompatActivity() {
 
         }
 
-        Log.d("Documentos","libros subidos a firebase")
+
 
 //        bd.collection("books").document().set(
 //            hashMapOf(

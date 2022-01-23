@@ -64,7 +64,6 @@ class ActivityListBook : AppCompatActivity() {
 
         bd.collection("books").get().addOnSuccessListener {
                 for (documentos in it){
-                    //Log.d("Documentos","${documentos.data.get("id")}")
                     lista.add(ModelListBook(
                         documentos.data.get("name").toString(),
                         documentos.data.get("editorial").toString(),
@@ -121,8 +120,6 @@ class ActivityListBook : AppCompatActivity() {
         ListBook_calification_star.rating = 0f
         ListBook_message_null_calification.visibility = View.GONE
 
-        //Log.d("Documento","${id}")
-
         adapterComments = AdapterListBookComments(this)
 
         ListBook_recyclerview_comments.layoutManager =LinearLayoutManager(this)
@@ -132,7 +129,6 @@ class ActivityListBook : AppCompatActivity() {
             var NumUser:Int = 0
             var points:Int = 0
             for (documentos in it){
-                //Log.d("Documentos","${documentos}")
                 NumUser++
                 points += "${documentos.get("calification")}".toInt()
                 listaComments.add(
@@ -167,7 +163,6 @@ class ActivityListBook : AppCompatActivity() {
                 var id:String = ""
                 for (documentos in it){
                     id = documentos.data.get("book_id").toString()
-                    Log.d("Documentos",documentos.data.toString())
                 }
                 if (id.isNotEmpty()){
                     Toast.makeText(this, "ya lo reservaste", Toast.LENGTH_SHORT).show()
@@ -184,7 +179,7 @@ class ActivityListBook : AppCompatActivity() {
                 "book_name" to "${lista.get(POSITION).name}",
                 "book_photo" to "${lista.get(POSITION).photo}",
                 "matricula" to "${MATRICULA}",
-                "menssage" to "",
+                "message" to "",
                 "answer" to false,
                 "delivered" to false,
                 "returned" to false,
@@ -220,7 +215,7 @@ class ActivityListBook : AppCompatActivity() {
                 "book_name" to "${lista.get(POSITION).name}",
                 "book_photo" to "${lista.get(POSITION).photo}",
                 "matricula" to "${MATRICULA}",
-                "menssage" to "",
+                "message" to "",
                 "answer" to false,
                 "delivered" to false,
                 "returned" to false,

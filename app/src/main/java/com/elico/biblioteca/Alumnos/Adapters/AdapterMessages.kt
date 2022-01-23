@@ -37,7 +37,7 @@ class AdapterMessages(private val contex:Context): RecyclerView.Adapter<AdapterM
         val messages = datalist[position]
         holder.itemView.item_messages_card.setOnClickListener {
             if (contex is ActivityMessages){
-                contex.ShowMessage()
+                contex.ShowMessage(position)
             }
         }
 
@@ -46,8 +46,8 @@ class AdapterMessages(private val contex:Context): RecyclerView.Adapter<AdapterM
 
     inner class ViewHolderMessages(itemView: View):RecyclerView.ViewHolder(itemView){
         fun bindView(messages:ModelMessages){
-            itemView.item_messages_date.text = messages.date
-            //itemView.item_messages_message.text = messages.message
+            itemView.item_messages_date.text = messages.date_answer
+            itemView.item_messages_message.text = messages.message
         }
     }
 

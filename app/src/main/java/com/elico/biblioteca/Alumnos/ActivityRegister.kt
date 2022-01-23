@@ -119,12 +119,9 @@ class ActivityRegister : AppCompatActivity() {
             .whereEqualTo("edition","1")
             .whereEqualTo("pages","462").get().addOnSuccessListener {
                 for (documentos in it){
-                    Log.d("Documentos","${documentos.id}<-->${documentos.data}")
-                    Log.d("Documentos","el id en el for es :${documentos.id}")
                     preubaTest(documentos.id)
                     break
             }
-                Log.d("Documento","terminado")
         }
     }
     private fun preubaTest(id:String){
@@ -138,9 +135,7 @@ class ActivityRegister : AppCompatActivity() {
                     "pages" to "462",
                     "photo" to "si hay photo",
                     "id" to "${id}"))
-        }catch (e:Exception){
-            Log.d("Documento","error: ${e}")
-        }
+        }catch (e:Exception){}
     }
 
 

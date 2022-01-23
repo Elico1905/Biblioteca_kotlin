@@ -95,6 +95,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_recyclerview_messages"/>
+        <TextView
+            android:id="@+id/item_messages_null_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Aun no tienes mensajes"
+            android:textSize="35dp"
+            android:gravity="center"
+            android:fontFamily="sans-serif-black"/>
 
     </LinearLayout>
 
@@ -234,7 +242,7 @@
                             android:layout_marginTop="15dp"
                             android:fontFamily="sans-serif-black"
                             android:paddingEnd="20dp"
-                            android:text="Edicion:"
+                            android:text="Paginas:"
                             android:textSize="23dp" />
 
                         <TextView
@@ -305,7 +313,7 @@
                             android:textSize="23dp" />
 
                         <TextView
-                            android:id="@+id/Message_date_answer"
+                            android:id="@+id/Messages_date_answer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"

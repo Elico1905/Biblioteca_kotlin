@@ -50,7 +50,7 @@ class ActivityInProcess : AppCompatActivity() {
                         "book_name" to "${BOOK_NAME}",
                         "book_photo" to "${BOOK_PHOTO}",
                         "matricula" to "${MATRICULA}",
-                        "menssage" to "",
+                        "message" to "",
                         "answer" to false,
                         "delivered" to false,
                         "returned" to false,
@@ -70,9 +70,7 @@ class ActivityInProcess : AppCompatActivity() {
                 if (lista.size > 0){
                     process_message.visibility = View.GONE
                     adapter.notifyDataSetChanged()
-                    Log.d("Documento","tamaño de lista -> ${lista.size}")
                 }else{
-                    Log.d("Documento","no hay libros en proceso aun")
                     process_recyclerview.visibility = View.GONE
                     process_message.visibility = View.VISIBLE
                 }
@@ -108,7 +106,6 @@ class ActivityInProcess : AppCompatActivity() {
                     adapter.notifyDataSetChanged()
                     lista = adapter.returnListData()
                 }else{
-                    Log.d("Documento","no hay libros en proceso aun")
                     process_recyclerview.visibility = View.GONE
                 }
             }
