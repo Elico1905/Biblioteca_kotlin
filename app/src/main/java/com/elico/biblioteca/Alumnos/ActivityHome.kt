@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import com.elico.biblioteca.ActivityGive
 import com.elico.biblioteca.Admin.ActivityTest
 import com.elico.biblioteca.Login
 import com.elico.biblioteca.R
@@ -33,15 +34,11 @@ class ActivityHome : AppCompatActivity() {
             home_matricula.text = "${MATRICULA}"
             if (PHOTO_USER != "NoPhoto"){
                 Glide.with(this).load(PHOTO_USER).into(home_photo_2)
-                Glide.with(this).load(PHOTO_USER).into(home_photo)
             }
         }else{
             Toast.makeText(this, "ir a login", Toast.LENGTH_SHORT).show()
         }
 
-        test.setOnClickListener {
-            startActivity(Intent(this, ActivityTest::class.java))
-        }
         home_section_message.setOnClickListener {
             startActivity(Intent(this, ActivityMessages::class.java).putExtra("matricula",MATRICULA))
         }

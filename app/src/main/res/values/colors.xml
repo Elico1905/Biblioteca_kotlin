@@ -2,7 +2,7 @@
 <resources>
     <color name="blue">#536DFE</color>
     <color name="blue_shadow">#30375d</color>
-    <color name="itsch_white">#f5f3e5</color>
+    <color name="itsch_white">#f5f5f5</color>
     <color name="iletters_white">#CEFFFFFF</color>
     <color name="hide_black">#BC232323</color>
     <color name="black">#FF000000</color>
